@@ -1,10 +1,62 @@
 [
     {
         "id": 1,
-        "image": "assets/images/horse.jpg"
+        "image": "assets/images/barbiepink.png",
+        "clicked": true
     },
     {
         "id": 2,
-        "image": "assets/images/horses2.jpg"
+        "image": "assets/images/bluepurple.png",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "image": "assets/images/bubblegumpink.png",
+        "clicked": false
+    },
+    {
+        "id": 4,
+        "image": "assets/images/cranberrypink.png",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "image": "assets/images/darkplum.png",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "image": "assets/images/darkpurple.png",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "image": "assets/images/lavender.png",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "image": "assets/images/lightbluepurple.png",
+        "clicked": false
+    },
+    {
+        "id": 9,
+        "image": "assets/images/lightpurple.png",
+        "clicked": false
+    },
+    {
+        "id": 10,
+        "image": "assets/images/pink.png",
+        "clicked": false
+    },
+    {
+        "id": 11,
+        "image": "assets/images/plum.png",
+        "clicked": false
+    },
+    {
+        "id": 12,
+        "image": "assets/images/purple.png",
+        "clicked": false
     }
 ]

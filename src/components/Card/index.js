@@ -2,8 +2,8 @@ import React from "react";
 
 function Card(props) {
   return (
-    <div className="card m-4 float-left" style={{width: '18rem'}}>
-        <img className="card-img-top img-fluid" alt="neigh" src={props.image} />
+    <div className="card m-4 float-left">
+        <img className="card-img-top" alt="colorname" src={props.image} id={props.id} onClick={() => props.handleClickEvent(props.id)} />
     </div>
   );
 }
