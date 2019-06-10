@@ -1,81 +1,103 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import ScoreCard from "./components/ScoreCard";
 import cards from "./cards.json";
+
 import "./App.css";
-// import { ReactComponent } from "*.svg";
 
 class App extends Component {
   state = {
     cards,
-    score: 0
+    score: 0,
+    message: "Click a flower to get started"
   };
 
   handleClickEvent = (id) => {
-    //on click, need to get the thing clicked and check to see if already clicked. 
-
-    //find the index for the clicked card and check to see if it has been clicked
+    //find the index for the clicked card 
     const cardIndex = this.state.cards.findIndex(card => card.id === id);
-    console.log(cardIndex);
 
+    // check to see if it has been clicked
     if (!cards[cardIndex].clicked) {
-      alert("card is not clicked yet");
 
-      //set score
-      console.log("current Score" + this.state.score)
-      this.setState(
-        { score: this.state.score + 1 },
-        () => {
-          console.log("score" + this.state.score)
-        }
-      );
+      //increase score
+      this.setState({ score: this.state.score + 1 });
 
-      //Update clicked to true for the applicable card
-      let updateCard = this.state.cards[cardIndex];
-      updateCard.clicked = true;
-      cards[cardIndex] = updateCard;
+      //Update clicked to true 
+      let clickedCard = this.state.cards[cardIndex];
+      clickedCard.clicked = true;
+      cards[cardIndex] = clickedCard;
 
       this.setState({ cards: cards });
-      console.log(cards[cardIndex]);
 
       //check to see if the game is over
       const gameOver = this.state.cards.filter(card => card.clicked === false);
-      if (gameOver.length > 0) { 
-        //game goes
-        //shuffle.
+      if (gameOver.length > 0) {
+        this.shuffleCards();
+        this.setState({ message: "Great guess!" });
       }
       else {
-          //winner winner 
-        alert("you win!!")
-        }
+        //winner winner 
+        this.setState({ message: "You won!!" });
+        this.resetGame();
+      }
     }
-    //already clicked.  Game Over. 
+    //already clicked. Game Over. 
     else {
-      alert("you lose");
+      this.setState({ message: "Oops, try again!" });
+      this.resetGame();
     }
-
-    //if already clicked, start over.
-    //if not already clicked, mark as clicked, increase score, check to see if the game is over
-    //if game is not over, shuffle cards.
-    //if game is over, message the user and let them start over.  leave score as it is?
-    // return (
-    //   alert("you clicked me! " + id)
-    // )
   }
 
+  shuffleCards = () => {
+    for (let i = cards.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+  }
+
+  resetGame = () => {
+    //set score to zero
+    this.setState({ score: 0 });
+
+    //set clicked to false for each card
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].clicked = false
+    }
+    this.setState({ cards: cards });
+
+    //move the cards
+    this.shuffleCards();
+  }
 
   render() {
     return (
-      <Wrapper>
-        {this.state.cards.map(card => (
-          <Card
-            key={card.id}
-            id={card.id}
-            image={card.image}
-            handleClickEvent={this.handleClickEvent}
+      <div>
+        <Wrapper>
+          <Navbar
+            message={this.state.message}
+            score={this.state.score}
           />
-        ))}
-      </Wrapper>
+          <ScoreCard
+            message={this.state.message}
+            score={this.state.score}
+          >
+            {this.state.cards.map(card => (
+              <Card
+                key={card.id}
+                id={card.id}
+                image={card.image}
+                name={card.name}
+                handleClickEvent={this.handleClickEvent}
+              />
+            ))}
+          </ScoreCard>
+        </Wrapper>
+        <Footer />
+      </div>
+
     )
   }
 }

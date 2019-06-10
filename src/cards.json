@@ -1,62 +1,62 @@
 [
     {
         "id": 1,
-        "image": "assets/images/barbiepink.png",
-        "clicked": true
+        "image": "assets/images/begonia.jpg",
+        "name": "Begonia",
+        "clicked": false
     },
     {
         "id": 2,
-        "image": "assets/images/bluepurple.png",
+        "image": "assets/images/chive.jpg",
+        "name": "Chive",
         "clicked": false
     },
     {
         "id": 3,
-        "image": "assets/images/bubblegumpink.png",
+        "image": "assets/images/coleus.jpg",
+        "name": "Coleus",
         "clicked": false
     },
     {
         "id": 4,
-        "image": "assets/images/cranberrypink.png",
+        "image": "assets/images/impatiens.jpg",
+        "name": "Impatiens",
         "clicked": false
     },
     {
         "id": 5,
-        "image": "assets/images/darkplum.png",
+        "image": "assets/images/lightpetunia.jpg",
+        "name": "Light Pink Petunia",
         "clicked": false
     },
     {
         "id": 6,
-        "image": "assets/images/darkpurple.png",
+        "image": "assets/images/marigold.jpg",
+        "name": "Marigold",
         "clicked": false
     },
     {
         "id": 7,
-        "image": "assets/images/lavender.png",
+        "image": "assets/images/yellow.jpg",
+        "name": "Yellow Flower",
         "clicked": false
     },
     {
         "id": 8,
-        "image": "assets/images/lightbluepurple.png",
+        "image": "assets/images/whiteflowers.jpg",
+        "name": "White Flowers",
         "clicked": false
     },
     {
         "id": 9,
-        "image": "assets/images/lightpurple.png",
+        "image": "assets/images/yellowmarigold.jpg",
+        "name": "Yellow Marigold",
         "clicked": false
     },
     {
         "id": 10,
-        "image": "assets/images/pink.png",
-        "clicked": false
-    },
-    {
-        "id": 11,
-        "image": "assets/images/plum.png",
-        "clicked": false
-    },
-    {
-        "id": 12,
-        "image": "assets/images/purple.png",
+        "image": "assets/images/petunia.jpg",
+        "name": "Pink Petunia",
         "clicked": false
     }
 ]
